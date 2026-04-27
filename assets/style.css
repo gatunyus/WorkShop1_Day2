@@ -1,0 +1,61 @@
+/* [AI_READ_HERE]: ไฟล์นี้ใช้จัดการ Style เพิ่มเติมจาก Bootstrap 5 */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.custom-input {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* ปรับปรุงระยะห่างและ Padding ของปุ่ม */
+.btn-lg {
+    padding: 12px 25px;
+}
+
+.table-responsive {
+    margin-bottom: 20px;
+}
+
+.card-body {
+    padding: 2rem !important;
+}
+
+.gap-custom {
+    gap: 15px;
+}
+
+/* เพิ่มระยะห่างระหว่างส่วนฟอร์มและตาราง */
+.card-header {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
