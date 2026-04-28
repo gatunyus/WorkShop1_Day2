@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif; 
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+    // 1. จำลอง Input JSON String
+    let jsonResponse = '{"productPrice": 24500, "months": 6}';
+
+    // 2. แปลงเป็น JavaScript Object
+    let installmentData = JSON.parse(jsonResponse);
+
+    // 3. สร้าง Arrow Function ที่รับ Parameter เป็น Object
+    const calcInstallment = (dataObj) => {
+        // แกะค่าจาก Object ออกมาใช้
+        let price = dataObj.productPrice;
+        let months = dataObj.months;
+        
+        let payPerMonth = price / months;
+        
+        let htmlOutput = "ยอดจัดสินค้า: " + price.toLocaleString() + " บาท ผ่อน " + months + " เดือน<br>";
+        htmlOutput += "ตกเดือนละ: " + payPerMonth.toFixed(2) + " บาท<br><hr>";
+        
+        // วนลูปสร้างรายการ
+        for (let i = 1; i <= months; i++) {
+            htmlOutput += "งวดที่ " + i + ": ต้องชำระ " + payPerMonth.toFixed(2) + " บาท<br>";
+        }
+        
+        return htmlOutput;
+    };
+
+    // 4. โยน Object เข้าไปในฟังก์ชันและแสดงผล
+    let scheduleResult = calcInstallment(installmentData);
+
+    document.getElementById("output").innerHTML = "--- ตารางผ่อนชำระ (JS JSON Input) ---<br>" + scheduleResult;
+    </script>
+</body>
+</html>

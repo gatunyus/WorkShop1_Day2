@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif; 
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+    // 1. จำลอง Input JSON String
+    let jsonResponse = '{"cartTotal": 1200, "isVip": true}';
+
+    // 2. แปลงเป็น JavaScript Object
+    let userCart = JSON.parse(jsonResponse);
+
+    let shippingFee = 0;
+    let message = "";
+
+    // 3. ตรวจสอบเงื่อนไขโดยอ้างอิงจาก Object Properties
+    if (userCart.cartTotal >= 1500 || userCart.isVip === true) {
+        shippingFee = 0;
+        message = "<span style='color:green;'>ยินดีด้วย! คุณได้รับสิทธิ์จัดส่งฟรี</span>";
+    } else {
+        shippingFee = 50;
+        message = "ค่าจัดส่ง 50 บาท (ซื้อครบ 1,500 บาท เพื่อรับสิทธิ์ส่งฟรี)";
+    }
+
+    let finalAmount = userCart.cartTotal + shippingFee;
+
+    // 4. สร้างข้อความแสดงผล
+    let strHTML = "--- ตรวจสอบค่าจัดส่ง (JS JSON Input) ---<br>";
+    strHTML += "ยอดซื้อสินค้า: " + userCart.cartTotal.toLocaleString() + " บาท<br>";
+    strHTML += "สถานะ VIP: " + userCart.isVip + "<br>";
+    strHTML += message + "<br>";
+    strHTML += "<strong>รวมยอดที่ต้องชำระ: " + finalAmount.toLocaleString() + " บาท</strong>";
+
+    document.getElementById("output").innerHTML = strHTML;
+
+    </script>
+</body>
+</html>
