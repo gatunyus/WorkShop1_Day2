@@ -30,6 +30,7 @@ Repository นี้เป็นโปรเจกต์ตัวอย่าง
    ```
 **Open Project:**
    เปิดไฟล์ `index.html` (หรือไฟล์หลักของโปรเจกต์) ผ่าน Web Browser
+   
 **Development:**
    สามารถแก้ไขโค้ดเพื่อเชื่อมต่อกับ Database (เช่น MySQL, FastAPI) ได้ทันทีในส่วนของ Data Processing
 
